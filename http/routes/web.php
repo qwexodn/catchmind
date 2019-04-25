@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', "main")->name("main");
+Route::any('/use', function () {
+    return redirect("http://naver.com");
 });
