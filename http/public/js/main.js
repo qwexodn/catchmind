@@ -93,7 +93,8 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/ts-loader/index.js):\nError: error while parsing tsconfig.json\n    at Object.loader (C:\\project\\cssscript\\http\\node_modules\\ts-loader\\dist\\index.js:19:18)");
+var a = "A;";
+
 
 /***/ }),
 
@@ -104,7 +105,7 @@ throw new Error("Module build failed (from ./node_modules/ts-loader/index.js):\n
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\project\cssscript\http\resources\js\main.ts */"./resources/js/main.ts");
+module.exports = __webpack_require__(/*! D:\project\weFamilyBoard\http\resources\js\main.ts */"./resources/js/main.ts");
 
 
 /***/ })
