@@ -1,2 +1,3 @@
-# catchmind
-그림그리기 게임 (캣츠마인드)
+# TodoList
+
+Vue Vue-router vuetify를 사용하여 TodoList를 작성!
