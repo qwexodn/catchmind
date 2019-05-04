@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 
+
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,4 +15,25 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
    .ts('resources/js/main.ts', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css')
+   .webpackConfig({
+      module: {
+         rules: [
+            {
+               test: /\.jsx?$/,
+               exclude: /node_modules(?!\/foundation-sites)|bower_components/,
+               use: [
+                  {
+                     loader: 'babel-loader',
+                     options: Config.babel()
+                  }
+               ]
+            }
+         ]
+      },
+      resolve: {
+         alias: {
+            '@': path.resolve('resources/sass')
+         }
+      }
+   });

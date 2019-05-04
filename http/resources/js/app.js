@@ -4,8 +4,10 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import './bootstrap';
 import Vuetify from 'vuetify';
+import Vue from 'vue';
+import 'vuetify/dist/vuetify.min.css';
 
 // 라우트파일
 import Routes from './routes/routes.js';
@@ -13,9 +15,6 @@ import Routes from './routes/routes.js';
 //컴포넌트 파일
 import App from "./views/App";
 
-require('./bootstrap');
-
-window.Vue = require('vue');
 Vue.use(Vuetify);
 
 /**
@@ -29,7 +28,7 @@ Vue.use(Vuetify);
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('content-a', require('./components/startHome.vue').default);
+// Vue.component('content-a', require('./components/Home.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -1,7 +1,10 @@
 <template>
-    <v-app>
-        <v-navigation-drawer>
-            
-        </v-navigation-drawer>
-    </v-app>
+
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
+<script>
+export default {
+}
+</script>
