@@ -13,27 +13,15 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.webpackConfig({
+   resolve:{
+      alias:{
+         '@sass':path.resolve(__dirname,'/resources/sass'),
+         '@js':path.resolve(__dirname,'/resources/js'),
+      }
+   }
+})
+
 mix.js('resources/js/app.js', 'public/js')
    .ts('resources/js/main.ts', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .webpackConfig({
-      module: {
-         rules: [
-            {
-               test: /\.jsx?$/,
-               exclude: /node_modules(?!\/foundation-sites)|bower_components/,
-               use: [
-                  {
-                     loader: 'babel-loader',
-                     options: Config.babel()
-                  }
-               ]
-            }
-         ]
-      },
-      resolve: {
-         alias: {
-            '@': path.resolve('resources/sass')
-         }
-      }
-   });
+   .sass('resources/sass/app.scss', 'public/css');

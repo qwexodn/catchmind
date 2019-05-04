@@ -11,6 +11,7 @@
             <v-flex xs6>
                 <ListAdd 
                     @listAdd="listAdd"
+                    @listUpdate="listUpdate"
                 />
             </v-flex>
         </v-layout>
@@ -34,6 +35,9 @@ export default {
             this.todoList.push({memo:memo, status:"created"});
             console.log(this.todoList);
         },
+        listUpdate(memo, index){
+            this.todoList[index].memo = memo;
+        },
         statusChange(index, status){
             this.todoList[index].status = status;
             console.table(this.todoList);
@@ -41,7 +45,7 @@ export default {
         todoDelete(index){
             this.todoList.splice(index, 1);
             console.log(this.todoList);
-        }
+        },
     }
 }
 </script>

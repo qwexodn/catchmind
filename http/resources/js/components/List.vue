@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-card
-        class="pa-3 mx-3 my-2"
+        class="pa-5 mx-3 my-2"
         :class="{'done': item.status === 'done'}"
         v-for="(item, index) in todoList"
         :key="index"
@@ -33,19 +33,42 @@
             >
                 <i class="fas fa-trash-alt"></i>
             </v-btn>
+
+            <!-- 수정버튼 -->
+            <v-btn 
+                v-if="item.status === 'created'"
+                fab flat small color="yellow" class="noout"
+                @click="listUpdate(index, item.memo)"
+            >
+                <i class="fas fa-pencil-alt"></i>
+            </v-btn>
         </v-card>
     </div>
 </template>
 <script>
+import { eventBus } from "../app.js";
+
 export default {
     props:["todoList"],
+    methods:{
+        listUpdate(index, memo){
+            eventBus.listUpdate(index, memo);
+        }
+    }
 }
 </script>
-<style scoped>
+
+
+
+<style lang="scss" scoped>
     .noout{
         outline:none;
     }
     .done{
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.1);
+
+        div{
+            text-decoration: line-through;
+        }
     }
 </style>
